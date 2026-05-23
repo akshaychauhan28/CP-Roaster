@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CP Roaster 🔥</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <!-- Floating orbs background -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+
+  <!-- Noise overlay -->
+  <div class="noise"></div>
+
+  <main class="landing">
+
+    <div class="landing-inner">
+
+      <!-- Badge -->
+      <div class="badge" data-aos="fade">
+        <span class="badge-dot"></span>
+        Codeforces · AI Powered · Free
+      </div>
+
+      <!-- Headline -->
+      <h1 class="headline">
+        <span class="headline-top">GET</span>
+        <span class="headline-mid">ROASTED</span>
+        <span class="headline-bot">by AI</span>
+      </h1>
+
+      <p class="subline">
+        Enter your Codeforces handle. We'll analyze your profile,<br>
+        <em>expose your weaknesses</em>, and roast you — then fix you.
+      </p>
+
+      <!-- Input -->
+      <div class="input-wrap">
+        <div class="input-box">
+          <span class="input-prefix">cf /</span>
+          <input
+            type="text"
+            id="handle-input"
+            placeholder="your_handle"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+        <button id="roast-btn" onclick="startRoast()">
+          <span class="btn-text">Roast Me 🔥</span>
+          <span class="btn-glow"></span>
+        </button>
+      </div>
+
+      <!-- Error -->
+      <div id="error-msg" class="error-msg"></div>
+
+      <!-- Loading state -->
+      <div id="loading" class="loading hidden">
+        <div class="loading-bars">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <p class="loading-text" id="loading-text">Fetching your shame...</p>
+      </div>
+
+      <!-- Footer hint -->
+      <p class="footer-hint">
+        Powered by Codeforces API + Groq LLaMA · No data stored
+      </p>
+
+    </div>
+
+  </main>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

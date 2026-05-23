@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Roast 🔥</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+  <div class="noise"></div>
+
+  <main class="result-page">
+
+    <!-- Header -->
+    <header class="result-header">
+      <a href="/" class="back-link">← Roast someone else</a>
+      <div class="result-badge">
+        <span class="badge-dot"></span>
+        Roast Complete
+      </div>
+    </header>
+
+    <!-- Profile banner -->
+    <section class="profile-banner">
+      <div class="profile-handle" id="res-handle">@tourist</div>
+      <div class="profile-rank" id="res-rank">Legendary Grandmaster</div>
+      <div class="profile-rating">
+        <span class="rating-label">Rating</span>
+        <span class="rating-val" id="res-rating">3473</span>
+        <span class="rating-max">/ <span id="res-max-rating">4009</span> peak</span>
+      </div>
+    </section>
+
+    <!-- Stats grid -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">🎯</div>
+        <div class="stat-val" id="res-solved">0</div>
+        <div class="stat-label">Problems Solved</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">✅</div>
+        <div class="stat-val" id="res-acceptance">0%</div>
+        <div class="stat-label">Acceptance Rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⚔️</div>
+        <div class="stat-val" id="res-difficulty">0</div>
+        <div class="stat-label">Avg Difficulty</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🏆</div>
+        <div class="stat-val" id="res-contests">0</div>
+        <div class="stat-label">Contests</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🔥</div>
+        <div class="stat-val" id="res-streak">0</div>
+        <div class="stat-label">Day Streak</div>
+      </div>
+      <div class="stat-card weak-card">
+        <div class="stat-icon">💀</div>
+        <div class="stat-val weak-tags" id="res-weak">-</div>
+        <div class="stat-label">Weak Areas</div>
+      </div>
+    </section>
+
+    <!-- The Roast -->
+    <section class="roast-section">
+      <div class="roast-header">
+        <span class="roast-fire">🔥</span>
+        <h2 class="roast-title">THE ROAST</h2>
+        <span class="roast-fire">🔥</span>
+      </div>
+      <div class="roast-content" id="roast-content">
+        <!-- roast text injected here -->
+      </div>
+    </section>
+
+    <!-- Share -->
+    <section class="share-section">
+      <button class="share-btn" onclick="copyRoast()">
+        Copy Roast 📋
+      </button>
+      <a href="/" class="try-again-btn">Try Another Handle</a>
+    </section>
+
+  </main>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
